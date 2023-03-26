@@ -1,0 +1,15 @@
+First install commands (sudo for linux):
+    sudo docker compose up --build
+    
+The application will be running in http://0.0.0.0:8000/
+
+In new terminal search for the image id with the command: 
+    docker ps
+
+Execute the image with the command ({id} means the id you get before):
+    sudo docker exec -t -i {id} bash
+
+Now you have the bash from the application open, and you can run the migrations:
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py createsuperuser
